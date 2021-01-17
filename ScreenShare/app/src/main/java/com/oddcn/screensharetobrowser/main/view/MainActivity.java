@@ -1,12 +1,18 @@
 package com.oddcn.screensharetobrowser.main.view;
 
+import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.content.Intent;
 
 import com.oddcn.screensharetobrowser.R;
 import com.oddcn.screensharetobrowser.ScreenShareFragment;
+import com.oddcn.screensharetobrowser.ApplicationContext;
+import com.oddcn.screensharetobrowser.SettingsActivity;
+import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,15 +20,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar mToolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_fragment_container, new ScreenShareFragment())
                 .commit();
     }
 
-    /*@Override
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.settings, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch(item.getItemId())
+        {
+            case R.id.menu_settings:
+                startActivity(new Intent(getApplication(), SettingsActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onBackPressed() {
-        if (MainViewModel.isServerRunning.get()) {
+        if (ApplicationContext.isServerRunning()) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.warning)
                     .setMessage(R.string.dialog_exit_message)
@@ -36,5 +63,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             finish();
         }
-    }*/
+    }
+    
 }
