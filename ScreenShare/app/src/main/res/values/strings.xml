@@ -26,4 +26,23 @@
     <string name="conn_devices">device(s)</string>
 
     <string name="screen_share_service">Screen Share Service</string>
+
+    <!--SettingsActivity-->
+    <string name="port_range">Port number must be between %1$d and %2$d</string>
+    <string name="value">\nValue:\u0020</string>
+    
+    <!--PreferenceScreen-->
+    <string name="settings_interface">Interface</string>
+    <string name="minimize_on_stream">Minimize on stream</string>
+    <string name="minimise_on_stream_summary">Minimize app on stream start</string>
+    <string name="stop_on_sleep">Stop on sleep</string>
+    <string name="stop_on_sleep_summary">Stop stream if screen turns off</string>
+    <string name="settings_advanced">Advanced</string>
+    <string name="server_port">Server port</string>
+    <string name="server_port_summary">Set port for incoming connections\nDefault: 8080</string>
+    <string name="settings_jpeg_quality">JPEG quality</string>
+    <string name="settings_jpeg_quality_summary">Set JPEG quality</string>
+    <string name="client_timeout">Client connection timeout</string>
+    <string name="client_timeout_summary">Set time for client response in seconds</string>
+    
 </resources>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="com.oddcn.screensharetobrowser.main.view.MainFragment"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#F5F5F5">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="#FFF">
+
+			<Space
+				android:id="@+id/space_center"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_centerHorizontal="true"/>
+
+			<com.oddcn.screensharetobrowser.main.view.CustomModeView
+				android:id="@+id/mode_view_wifi"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_toStartOf="@id/space_center"
+				app:border_color="@color/colorAccent"
+				app:content_text="@string/wifi_mode_desc"
+				app:img_icon="@drawable/ic_wifi"
+				app:title_text="@string/wifi_mode"/>
+
+			<com.oddcn.screensharetobrowser.main.view.CustomModeView
+				android:id="@+id/mode_view_hotspot"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				android:layout_marginEnd="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_toEndOf="@id/space_center"
+				app:border_color="@color/colorAccent"
+				app:content_text="@string/hotspot_mode_desc"
+				app:img_icon="@drawable/ic_hotspot"
+				app:title_text="@string/hotspot_mode"/>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:background="#FFF"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:id="@+id/img_refresh_ip"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:foreground="?attr/selectableItemBackgroundBorderless"
+				android:paddingBottom="16dp"
+				android:paddingEnd="8dp"
+				android:paddingStart="16dp"
+				android:paddingTop="16dp"
+				android:src="@drawable/ic_refresh"/>
+
+			<TextView
+				style="@style/TextAppearance.AppCompat.Medium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/local_ip"/>
+
+			<TextView
+				android:id="@+id/tv_local_ip"
+				style="@style/TextAppearance.AppCompat.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="localIpText"
+				android:textColor="@color/colorAccent"/>
+
+			<TextView
+				style="@style/TextAppearance.AppCompat.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=":"/>
+
+			<TextView
+				android:id="@+id/tv_local_port"
+				style="@style/TextAppearance.AppCompat.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="webServerPort"
+				android:textColor="@color/colorAccent"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:background="#FFF"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/btn_server"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@string/start_server"
+				android:textSize="16sp"/>
+
+			<Button
+				android:id="@+id/btn_record"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="@string/start_record"
+				android:textSize="16sp"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:background="#FFF"
+			android:paddingBottom="8dp"
+			android:paddingStart="16dp"
+			android:paddingTop="8dp"
+			android:text="@string/started"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="#FFF"
+				android:paddingBottom="8dp"
+				android:paddingStart="16dp"
+				android:paddingTop="8dp"
+				android:text="@string/current_conn"
+				android:visibility="invisible"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="#FFF"
+				android:padding="8dp"
+				android:text="@string/conn_devices"
+				android:visibility="invisible"/>
+
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/recycler_view_conn"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="#FFF"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

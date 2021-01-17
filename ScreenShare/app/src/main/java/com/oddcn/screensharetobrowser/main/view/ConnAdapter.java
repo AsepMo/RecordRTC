@@ -4,13 +4,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.oddcn.screensharetobrowser.R;
-import com.oddcn.screensharetobrowser.main.viewModel.ConnViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.widget.TextView;
 
 /**
  * Created by oddzh on 2017/11/1.
@@ -18,12 +17,10 @@ import android.widget.TextView;
 
 public class ConnAdapter extends RecyclerView.Adapter<ConnAdapter.ConnBindingHolder> {
 
-    private List<ConnViewModel> connList = new ArrayList<>();
+    private List<String> connList = new ArrayList<>();
 
-	private String connIp;
-    public void setData(List<ConnViewModel> connList, String connIp) {
+    public void setData(List<String> connList) {
         this.connList = connList;
-		this.connIp = connIp;
     }
 
     @Override
@@ -34,8 +31,7 @@ public class ConnAdapter extends RecyclerView.Adapter<ConnAdapter.ConnBindingHol
 
     @Override
     public void onBindViewHolder(ConnAdapter.ConnBindingHolder holder, int position) {
-		ConnViewModel v = connList.get(position);
-        holder.ipConnect.setText(v.getConnIp());
+        holder.connIp.setText(connList.get(position));
     }
 
     @Override
@@ -45,11 +41,11 @@ public class ConnAdapter extends RecyclerView.Adapter<ConnAdapter.ConnBindingHol
 
     public class ConnBindingHolder extends RecyclerView.ViewHolder {
 
-        public TextView ipConnect;
+        public TextView connIp;
 
         public ConnBindingHolder(View itemView) {
             super(itemView);
-            ipConnect = (TextView)itemView.findViewById(R.id.connIp);
+            connIp = (TextView)itemView.findViewById(R.id.connIp);;
         }
     }
 

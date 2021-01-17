@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.oddcn.screensharetobrowser.R;
-import com.oddcn.screensharetobrowser.main.viewModel.MainViewModel;
+import com.oddcn.screensharetobrowser.ScreenShareFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.main_fragment_container, new MainFragment())
+                .replace(R.id.main_fragment_container, new ScreenShareFragment())
                 .commit();
     }
 
