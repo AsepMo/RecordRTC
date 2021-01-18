@@ -24,7 +24,7 @@
                 android:layout_height="0dp"
                 android:layout_centerHorizontal="true"/>
 
-            <com.oddcn.screensharetobrowser.main.view.CustomModeView
+            <com.androweb.screenshare.main.view.CustomModeView
                 android:id="@+id/mode_view_wifi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
                 app:img_icon="@drawable/ic_wifi"
                 app:title_text="@string/wifi_mode"/>
 
-            <com.oddcn.screensharetobrowser.main.view.CustomModeView
+            <com.androweb.screenshare.main.view.CustomModeView
                 android:id="@+id/mode_view_hotspot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

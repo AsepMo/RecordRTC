@@ -11,7 +11,7 @@ import android.util.Log;
 import com.androweb.screenshare.R;
 import com.androweb.screenshare.ScreenShare;
 import com.androweb.screenshare.RxBus;
-import com.androweb.screenshare.main.view.MainActivity;
+import com.androweb.screenshare.ScreenShareActivity;
 import com.androweb.screenshare.server.transcodeServer.Transcoder;
 import com.androweb.screenshare.server.webServer.WebServer;
 import com.androweb.screenshare.server.wsServer.WsServer;
@@ -59,7 +59,7 @@ public class ServerService extends Service {
                 1,
                 Notifier.from(this)
                         .setTitle(getResources().getString(R.string.screen_share_service))
-                        .setActivityClass(MainActivity.class)
+			.setActivityClass(ScreenShareActivity.class)
                         .build()
         );
     }

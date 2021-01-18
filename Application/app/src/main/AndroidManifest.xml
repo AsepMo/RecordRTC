@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.androweb.screenshare.main.view.MainActivity"
+            android:name="com.androweb.screenshare.ScreenShareActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

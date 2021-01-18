@@ -1,4 +1,4 @@
-package com.androweb.screenshare.main.view;
+package com.androweb.screenshare;
 
 import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
@@ -14,7 +14,7 @@ import com.androweb.screenshare.ApplicationContext;
 import com.androweb.screenshare.SettingsActivity;
 import android.support.v7.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class ScreenShareActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.main_fragment_container, new ScreenShareFragment())
-                .commit();
+			.beginTransaction()
+			.replace(R.id.main_fragment_container, new ScreenShareFragment())
+			.commit();
+			
     }
 
     @Override
@@ -51,18 +52,18 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (ApplicationContext.isServerRunning()) {
             new AlertDialog.Builder(this)
-                    .setTitle(R.string.warning)
-                    .setMessage(R.string.dialog_exit_message)
-                    .setPositiveButton(getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton(getResources().getString(android.R.string.cancel), null)
-                    .show();
+				.setTitle(R.string.warning)
+				.setMessage(R.string.dialog_exit_message)
+				.setPositiveButton(getResources().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						finish();
+					}
+				})
+				.setNegativeButton(getResources().getString(android.R.string.cancel), null)
+				.show();
         } else {
             finish();
         }
     }
-    
+
 }
