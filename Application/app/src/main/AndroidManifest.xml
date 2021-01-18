@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.oddcn.screensharetobrowser">
+    package="com.androweb.screenshare">
 
  	<!-- Connection Permission -->
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".main.view.MainActivity"
+            android:name="com.androweb.screenshare.main.view.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -36,12 +36,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.androweb.screenshare.connection.ConnectionActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.androweb.screenshare.SettingsActivity"
             android:theme="@android:style/Theme.DeviceDefault.Light">
         </activity>
-        <service android:name=".server.ServerService" />
-        <service android:name=".recorder.RecordService" />
-		<receiver android:name=".APWidget">
+        <service android:name="com.androweb.screenshare.server.ServerService" />
+        <service android:name="com.androweb.screenshare.recorder.RecordService" />
+		<receiver android:name="com.androweb.screenshare.connection.APWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
